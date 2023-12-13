@@ -1,0 +1,55 @@
+let canvas = document.querySelector("canvas");
+let context = canvas.getContext("2d");
+
+// one
+drawSurfboard();
+
+// two
+context.translate(400, -20);
+context.scale(.5, .5);
+drawSurfboard();
+
+// three
+context.resetTransform();
+context.scale(4, 4);
+drawSurfboard();
+
+// four
+context.resetTransform();
+context.translate(-190, 150);
+context.scale(.75, .75);
+drawSurfboard();
+
+// five
+context.resetTransform();
+context.translate(260, 210);
+context.scale(.5, .5);
+drawSurfboard();
+
+// six
+context.resetTransform();
+context.translate(-490, -300);
+context.scale(.25, .25);
+drawSurfboard();
+
+// seven
+context.resetTransform();
+context.translate(1500, -800);
+context.scale(1.5, 1.5);
+drawSurfboard();
+
+function drawSurfboard() {
+    // Drawing a simple surfboard shape
+    context.beginPath();
+    context.ellipse(250, 200, 50, 150, 0, 0, 2 * Math.PI);
+    context.fillStyle = 'blue';
+    context.fill();
+    context.stroke();
+
+    // Adding a line in the middle of the surfboard for detail
+    context.beginPath();
+    context.moveTo(250, 50);
+    context.lineTo(250, 350);
+    context.strokeStyle = 'white';
+    context.stroke();
+}
